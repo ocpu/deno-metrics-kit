@@ -22,7 +22,7 @@ It currently supports connectors for the following formats and modules:
 ### Builtin Prometheus
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge, createHistogram } from "https://deno.land/x/metrics_kit/prometheus.ts";
+import { createCounter, createGauge, createHistogram } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/prometheus.ts";
 
 const serverConnectionsMetric = createCounter({
   namespace: "server",
@@ -46,8 +46,8 @@ const httpServerResuestsSecondsMetric = createHistogram({
 ```
 ```typescript
 // Wrapping constructs from the module
-import { createMetric } from "https://deno.land/x/metrics_kit/prometheus/mod.ts";
-import { createCounter, createGauge, createHistogram } from "https://deno.land/x/metrics_kit/prometheus.ts";
+import { createMetric } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/prometheus/mod.ts";
+import { createCounter, createGauge, createHistogram } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/prometheus.ts";
 
 const serverConnectionsMetric = createCounter(createMetric({
   type: "counter",
@@ -76,7 +76,7 @@ const httpServerResuestsSecondsMetric = createHistogram(createMetric({
 ### `ts_prometheus` module
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge, createHistogram } from "https://deno.land/x/metrics_kit/ts_prometheus.ts";
+import { createCounter, createGauge, createHistogram } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/ts_prometheus.ts";
 
 const serverConnectionsMetric = createCounter({
   name: "server_connections",
@@ -99,7 +99,7 @@ const httpServerResuestsSecondsMetric = createHistogram({
 ```typescript
 // Wrapping constructs from the module
 import { Counter, Gauge, Histogram } from "https://deno.land/x/ts_prometheus/mod.ts";
-import { createCounter, createGauge, createHistogram } from "https://deno.land/x/metrics_kit/ts_prometheus.ts";
+import { createCounter, createGauge, createHistogram } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/ts_prometheus.ts";
 
 const serverConnectionsMetric = createCounter(Counter.with({
   name: "server_connections",
@@ -127,7 +127,7 @@ const httpServerResuestsSecondsMetric = createHistogram(Histogram.with({
 
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge, createTiming } from "https://deno.land/x/metrics_kit/statsd.ts";
+import { createCounter, createGauge, createTiming } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/statsd.ts";
 
 const serverConnectionsMetric = createCounter(
   theStatsDClient,
@@ -147,7 +147,7 @@ const httpServerResuestsSecondsMetric = createTiming(
 
 ```typescript
 // Wrapping the client
-import { wrapStatsDClient } from "https://deno.land/x/metrics_kit/statsd.ts";
+import { wrapStatsDClient } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/statsd.ts";
 
 const wrappedClient = wrapStatsDClient(theStatsDClient);
 
@@ -172,7 +172,7 @@ const httpServerResuestsSecondsMetric = wrappedClient.createTiming(
 
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge } from "https://deno.land/x/metrics_kit/expvar.ts";
+import { createCounter, createGauge } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/expvar.ts";
 
 const serverConnectionsMetric = createCounter(
   "server_connections",
@@ -185,8 +185,8 @@ const nodeMemoryFreeBytesMetric = createGauge(
 
 ```typescript
 // Wrapping constructs from the module
-import { createCounter, createGauge } from "https://deno.land/x/metrics_kit/expvar.ts";
-import * as expvar from "https://deno.land/x/metrics_kit/expvar/mod.ts";
+import { createCounter, createGauge } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/expvar.ts";
+import * as expvar from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/expvar/mod.ts";
 
 const serverConnectionsMetric = createCounter(expvar.createFloat(
   "server_connections",
@@ -205,7 +205,7 @@ const nodeMemoryFreeBytesMetric = createGauge(expvar.createFloat(
 
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge } from "https://deno.land/x/metrics_kit/cloudwatch.ts";
+import { createCounter, createGauge } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/cloudwatch.ts";
 
 const serverConnectionsMetric = createCounter({
   MetricName: 'server_connections'
@@ -224,7 +224,7 @@ const nodeMemoryFreeBytesMetric = createGauge({
 
 ```typescript
 // Creating directly from the connector
-import { createCounter, createGauge, createHistogram } from "https://deno.land/x/metrics_kit/discard.ts";
+import { createCounter, createGauge, createHistogram } from "https://raw.githubusercontent.com/ocpu/deno-metrics-kit/main/discard.ts";
 
 const serverConnectionsMetric = createCounter();
 
