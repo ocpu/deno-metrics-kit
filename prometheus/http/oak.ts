@@ -44,7 +44,7 @@ export function createRouterHandler(
 }
 
 export function createMetricCollector(
-  options: CreateMetricCollectorOptions,
+  options: CreateMetricCollectorOptions = {},
 ): Middleware {
   const collector = createBasicMetricCollector(options)
   return async (ctx, next) => {

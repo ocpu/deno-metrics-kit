@@ -44,7 +44,7 @@ export function createRouterHandler(
 }
 
 export function createMetricCollector(
-  options: CreateMetricCollectorOptions,
+  options: CreateMetricCollectorOptions = {},
 ): ApplicationMiddleware {
   const collector = createBasicMetricCollector(options);
   return async (ctx) => {
@@ -52,7 +52,7 @@ export function createMetricCollector(
     await ctx.next();
     reporter.report({
       request: {
-        ...ctx.request.original,
+        method: ctx.request.original.method,
         path: ctx.request.url.pathname,
       },
       response: ctx.response,
