@@ -60,8 +60,8 @@ export function createHandler(registry: Collector = defaultRegistry) {
     const data = textEncoder.encode(
       Object.entries(groupedMetricsByName).map(([name, metrics]) => {
         let part = "";
-        part += "HELP " + name + " " + metrics[0].desc.help + "\n";
-        part += "TYPE " + name + " " + metrics[0].desc.type + "\n";
+        part += "# HELP " + name + " " + metrics[0].desc.help + "\n";
+        part += "# TYPE " + name + " " + metrics[0].desc.type + "\n";
         for (const { desc, metric } of metrics) {
           part += desc.name + getMetricLabelsAsString(metric.labels) + " " +
             metric.value + "\n";
